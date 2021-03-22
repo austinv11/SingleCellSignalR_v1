@@ -5,6 +5,7 @@
 #' @param data a data frame of n rows (genes) and m columns (cells) of read or UMI counts (note : rownames(data)=genes)
 #' @param genes a character vector of HUGO official gene symbols of length n
 #' @param cluster a numeric vector of length m
+#' @param lrDB a numeric vector of length m
 #' @param c.names (optional) cluster names
 #' @param n an integer the number of most variables interactions
 #' @param species "homo sapiens" or "mus musculus"
@@ -20,7 +21,7 @@
 #' genes = c("gene 1","gene 2","gene 3","gene 4","gene 5")
 #' cluster=c(rep(1,100),rep(2,100))
 #' mv_interactions(data,genes,cluster)
-mv_interactions = function(data,genes,cluster,c.names=NULL,n=30,species=c("homo sapiens","mus musculus")){
+mv_interactions = function(data,genes,cluster,lrDB,c.names=NULL,n=30,species=c("homo sapiens","mus musculus")){
   if (is.null(c.names)==TRUE){
     c.names = paste("cluster",1:max(cluster))
   }
@@ -72,5 +73,3 @@ mv_interactions = function(data,genes,cluster,c.names=NULL,n=30,species=c("homo 
   }
 
 }
-
-

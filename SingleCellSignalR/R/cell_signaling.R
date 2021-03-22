@@ -12,6 +12,7 @@
 #' @param tol a tolerance parameter for balancing between "autocrine" and "paracrine" interactions
 #' @param write a logical
 #' @param verbose a logical
+#' @param LRdb a logical
 #'
 #' @return The function returns "autocrine" or "paracrine" interaction lists.
 #'
@@ -21,13 +22,13 @@
 #' @importFrom stats median pnorm
 #' @importFrom stats median sd
 #' @importFrom igraph graph_from_data_frame write.graph
-#'
+#'LRdb
 #' @examples
 #' data=matrix(runif(1000,0,1),nrow=5,ncol=200)
 #' rownames(data) = c("A2M","LRP1","AANAT","MTNR1A","ACE")
 #' cluster=c(rep(1,100),rep(2,100))
 #' cell_signaling(data,rownames(data),cluster,int.type="paracrine",write=FALSE)
-cell_signaling = function(data, genes, cluster,int.type=c("paracrine","autocrine"),c.names=NULL,s.score=0.5,logFC=log2(1.5),species=c("homo sapiens","mus musculus"),tol=0,write=TRUE,verbose=TRUE){
+cell_signaling = function(data, genes, cluster,LRdb,int.type=c("paracrine","autocrine"),c.names=NULL,s.score=0.5,logFC=log2(1.5),species=c("homo sapiens","mus musculus"),tol=0,write=TRUE,verbose=TRUE){
   if (dir.exists("cell-signaling")==FALSE & write==TRUE){
     dir.create("cell-signaling")
   }

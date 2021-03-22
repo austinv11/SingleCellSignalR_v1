@@ -1,7 +1,7 @@
-# SingleCellSignalR
+# SCAOmni
 
-A R package to study Cell Signaling Using Single Cell RNAseq Data.
- 
+This is a custom version of the package [SingleCellSignalR](*https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaa183/5810485*) which allows the usage of custom Ligand Receptor interaction resource. 
+
 # Installation
 
 From Rstudio type:

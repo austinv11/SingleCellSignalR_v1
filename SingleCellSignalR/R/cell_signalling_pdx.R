@@ -51,7 +51,7 @@
 #' colnames(mix.data) <- c(rep("human",100),rep("mouse",100))
 #' cell_signaling_pdx(mix.data)
 #'
-cell_signaling_pdx = function(mix.data,cluster.human=NULL,cluster.mouse=NULL,c.names.human=NULL,c.names.mouse=NULL,tol=0,s.score=0.5,write=FALSE,verbose=TRUE){
+cell_signaling_pdx = function(mix.data,LRdb,cluster.human=NULL,cluster.mouse=NULL,c.names.human=NULL,c.names.mouse=NULL,tol=0,s.score=0.5,write=FALSE,verbose=TRUE){
 
   if (is.null(cluster.human) & is.null(cluster.mouse)){
     cluster.human <- rep(1,sum(grepl("human",colnames(mix.data))))
