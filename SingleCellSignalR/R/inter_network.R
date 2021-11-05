@@ -67,7 +67,7 @@ inter_network = function(data,genes,cluster,signal,c.names=NULL,species=c("homo 
       ci <-  signal[[i]]
       from <- names(ci)[1]
       to <- names(ci)[2]
-      tmp[[i]] <-  data.frame(ligand=paste0(from,"^",ci[[1]]),receptor=paste0(to,"^",ci[[2]]),ligand.name=ci[[1]],
+      tmp[[i]] <-  data.frame(ligand=paste0(from,"⊎",ci[[1]]),receptor=paste0(to,"⊎",ci[[2]]),ligand.name=ci[[1]],
                  receptor.name=ci[[2]],origin=from,destination=to,ci[,3:4],stringsAsFactors=FALSE)
     }
     cellint = do.call("rbind",tmp)
